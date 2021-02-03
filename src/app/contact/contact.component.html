@@ -1,0 +1,129 @@
+<!--contact.php-->
+<img class="img-fluid" src="/assets/images/banner6.jpg" alt="balajiexim" title="balajiexim" style="margin-top: -20px;">
+<div class="text-justify p-3 bckclr2 t1">
+    <a class="clr" [routerLink]="['/home']"><i class="fa fa-angle-double-left"></i> Home / </a>
+    <a class="clr" [routerLink]="['/contact']"> Contact Us <i class="fa fa-angle-double-right"></i></a>
+</div>
+<div class="container-fluid mt-5">
+  <div class="row p-3">
+    <div class="col-sm-12 col-md-12 col-lg-6">
+      <img src="assets/images/balajieximlogo.jpg" class="wdth4 mt-2" alt="balajiexim" title="balajiexim">
+      <table>
+        <tbody>
+          <tr>
+            <td class="contact"><i class="text-center fntsize3 fa fa-map-marker"></i><span> Address </span></td>
+            <td> : </td>
+            <td class="contact1">
+                Balaji Exim,<br>
+                3/303 Karuppaswamy Street,<br>
+                Vilampatti, Sivakasi,<br>
+                Virudhunagar District,<br>
+                TamilNadu,India
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="mt-4">
+        <tbody>
+          <tr>
+            <td class="contact"><i class="text-center fntsize3 fa fa-phone"></i><span> Phone Number </span></td>
+            <td> : </td>
+            <td class="contact1"> +91-9159252560,+91-9159252560 </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="mt-4">
+        <tbody>
+          <tr>
+            <td class="contact"><i class="text-center fntsize3 fa fa-envelope"></i><span> Email Id </span></td>
+            <td> : </td>
+            <td class="contact1"> <a href="mailto:balajiexims@gmail.com" alt="balajiexims@gmail.com">balajiexims@gmail.com</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td class="contact"><i class="text-center fntsize3 fa fa-map-marker"></i><span> Manufacturing Address </span></td>
+            <td> : </td>
+            <td class="contact1">
+                Balaji Exim,<br>
+                3/303 Karuppaswamy Street,<br>
+                Vilampatti, Sivakasi,<br>
+                Virudhunagar District,<br>
+                TamilNadu,India
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="mt-4">
+        <tbody>
+          <tr>
+            <td class="contact"><i class="text-center fntsize3 fa fa-phone"></i><span> Phone Number </span></td>
+            <td> : </td>
+            <td class="contact1"> +91-9159252560,+91-9159252560 </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="mt-4">
+        <tbody>
+          <tr>
+            <td class="contact"><i class="text-center fntsize3 fa fa-envelope"></i><span> Email Id </span></td>
+            <td> : </td>
+            <td class="contact1"> <a href="mailto:balajiexims@gmail.com" alt="balajiexims@gmail.com">balajiexims@gmail.com</a> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-6 mar bckimg2 img-thumbnail">
+      <form (ngSubmit)="processForm()" #contactForm="ngForm">
+        <h3 class="text-center mt-3 fntbold clr1"> LETS KEEP IN TOUCH </h3>
+        
+        <label> User Name : </label>
+        <input type="text" class="form-control" id="name" name="name" required minlength="3" #nameInput="ngModel" [(ngModel)]="name">
+        
+        <div class="error" *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">
+          Name is required and needs to be at least 3 characters long.
+        </div>
+
+        <label class="mt-2"> Email Address : </label>
+        <input type="text" class="form-control" id="email" name="email" required email #emailInput="ngModel" [(ngModel)]="email">
+        
+        <div class="error" *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+          Please enter valid email.
+        </div>
+
+        <label class="mt-2"> Address : </label>
+        <textarea class="wdth1" id="address" name="address" required maxlength="100" #addressInput="ngModel" [(ngModel)]="address"></textarea>
+        
+        <div class="error" *ngIf="addressInput.invalid && (addressInput.dirty || addressInput.touched)">
+          Please enter address and it should not exceed 100 chars.
+        </div>
+
+        <label class="mt-2"> Details : </label>
+        <textarea class="wdth1" id="details" name="details" required maxlength="100" #detailsInput="ngModel" [(ngModel)]="details"></textarea>
+        
+        <div class="error" *ngIf="detailsInput.invalid && (detailsInput.dirty || detailsInput.touched)">
+          Please enter details and it should not exceed 100 chars.
+        </div>
+
+        <p class="text-center mt-3">
+          <button [disabled]="!contactForm.form.valid" class="btn btn-primary" name="send" type="submit" value="submit">Send</button>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row mt-5 p-2">
+    <div class="col-sm-6 text-center">
+      <img class="text-center img-thumbanil" src="/assets/images/agr.jpg" alt="balajiexim" title="balajiexim">
+    </div>
+    <div class="col-sm-6 text-center">
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+</div>
