@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -25,12 +25,9 @@ import { ContactComponent } from './contact/contact.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD3WXOATAd-zrtHBxeU5wx_WWm6ZLNNiNQ'
-    })
+    FormsModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

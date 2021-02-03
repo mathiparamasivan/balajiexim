@@ -64,8 +64,8 @@ button:focus{outline: none !important;} li{list-style-type: none; display:inline
 .card {display: flex;flex-direction: column; background-color:#acd73a; border-radius: 0px; border: 2px solid #acd73a;}
 .card__img {background-size: cover;background-position: center;background-repeat: no-repeat; width: 100%;height: 235px;}
 .card__img--hover { transition: 0.2s all ease-out; background-size: cover;background-position: center;background-repeat: no-repeat;width: 100%;position: absolute;height: 235px;top: 0;}
- .card--1 .card__img--hover {background-image: url("../src/assets/images/product1.jpg");} .card--2 .card__img--hover {background-image: url("../src/assets/images/product2.jpg");}
-.card--3 .card__img--hover {background-image: url("../src/assets/images/product3.jpg");} .card--4 .card__img--hover {background-image: url("../src/assets/images/product4.jpg");}
+ .card--1 .card__img--hover {background-image: url("../src/assets/images/cinnamon2.png");} .card--11 .card__img--hover {background-image: url("../src/assets/images/more.png");} .card--2 .card__img--hover {background-image: url("../src/assets/images/coriander2.jpg");}
+.card--3 .card__img--hover {background-image: url("../src/assets/images/cumin1.jpg");} .card--4 .card__img--hover {background-image: url("../src/assets/images/turmeric2.jpg");}
 /*.card--5 .card__img--hover {background-image: url("../src/assets/images/product/veg.jpg");} .card--6 .card__img--hover {background-image: url("../src/assets/images/product/pickle.jpg");}
 .card--7 .card__img--hover {background-image: url("../src/assets/images/product/soya.jpg");} .card--8 .card__img--hover {background-image: url("../src/assets/images/product/spice1.jpg");} */
 .card:hover .card__img--hover { height: 100%; opacity: 0.4;}
@@ -118,7 +118,9 @@ agm-map {
 .smalllogo{font-weight: bold;
   background-color: white;
   border-radius: 50px;
-  font-size: 20px;
+  display: inline-grid;
+  display: -moz-inline-grid;
+  /* font-size: 20px; */
   padding: 6px;
   color: green;
   font-variant-caps: small-caps;}
@@ -204,12 +206,80 @@ a.waves-effect, a.waves-light {
 }
 .mdb-color{background-color:#45526e!important}
 
-.span4 img {
-    margin-right: 10px!important;
+.dusty-grass-gradient {
+    /* background-image: -webkit-linear-gradient(330deg,#d4fc79 0,#96e6a1 100%);
+    background-image: -o-linear-gradient(330deg,#d4fc79 0,#96e6a1 100%);
+    background-image: linear-gradient(120deg,#d4fc79 0,#96e6a1 100%); */
+    /* background-image: -webkit-linear-gradient(330deg,#009947 0,#59b47a 100%);
+    background-image: -o-linear-gradient(330deg,#84fab0 0,#8fd3f4 100%);
+    background-image: linear-gradient(120deg,#009947 0,#59b47a 100%); */
+    background-image: url("../src/assets/images/agri1.jpg");
+    height: 300px;
+    overflow: hidden;
+    margin-top: -20px;
 }
-.span4 .img-left {
-    float: left !important;
+.thumbnail p {
+  margin-top: 15px;
+  color: #555;
 }
-.span4 .img-right {
-    float: right !important;
+.prdContainer{
+  /*border:5px solid black;009947*/
+  border: 1px solid black;
+    border-radius: 5px;
+    margin-top: -250px;
+    background-color: white;
+}
+.controls-top{
+  text-align: center;
+  margin-bottom: 1.88rem;
+}
+a.btn-product-floating{
+  background-color: #acd73a !important;
+}
+.btn-product-floating i{
+  font-size:1.25rem;
+  line-height:47px;
+}
+.btn-rounded{
+  background-color: #009947;
+  border-radius: 10em !important;
+  border-color:#6aaf08 !important;
+}
+.wth-10{width:10%;} .wth-30{width:30%;}
+.bckimgcnt{ padding-left: 5px; background:url("../src/assets/images/contact1.png"); background-position: center; background-size: cover; background-repeat:no-repeat;height: 100%;} 
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  padding-right: 5px;
+}
+/* .avatar {
+  position: relative;
+  top: -70px;
+  margin-bottom: -30px;
+} */
+.avatar img {
+  width: 200px;
+  height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.5);
+}
+.profilecard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* max-width: 300px; */
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
 }

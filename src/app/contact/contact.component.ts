@@ -13,6 +13,7 @@ export class ContactComponent implements OnInit {
   lng: number = 7.809007;
   name: string;
   email: string;
+  mobile: string;
   address: string;
   details: string;
   endpoint: string;
@@ -24,7 +25,7 @@ export class ContactComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.endpoint = "http://localhost/contact.php";
+    this.endpoint = "http://www.balajiexims.com/contact.php";
     this.status = false;
   }
 
@@ -33,7 +34,7 @@ export class ContactComponent implements OnInit {
    * Only alerting for now
    */
   processForm() {
-    const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.address}. My details is ${this.details}`;
+    const allInfo = `My name is ${this.name}. My number is ${this.mobile}. My email is ${this.email}. My message is ${this.address}. My details is ${this.details}`;
     //alert(allInfo); 
     // this.sendMail((status) => {
     //   console.log(status);
@@ -42,7 +43,7 @@ export class ContactComponent implements OnInit {
   }
 
   sendMail() {
-    const body = {name: this.name, email: this.email, address: this.address, details: this.details};
+    const body = {name: this.name, mob:this.mobile, email: this.email, address: this.address, details: this.details};
     // this.http.post(this.endpoint, body).subscribe(
     //   (response: any) => {
     //     callback(response.status);
@@ -50,10 +51,13 @@ export class ContactComponent implements OnInit {
     //   }
     // );
     this.http.post<Contact>(this.endpoint,body,this.httpOptions).subscribe(data=>this.model=data);
-    if(this.model.resp=="true")
-      alert("Mail Sent...you will hear from us shortly");
-    else
+    if(this.model.resp=="false")
       alert("Mail cannot be sent...try again later");
+    else
+    {
+      alert("Thank you for contacting us !!! We will contact you soon");
+      window.location.reload();
+    }
   }
   
 }

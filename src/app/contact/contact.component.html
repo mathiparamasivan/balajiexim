@@ -1,10 +1,106 @@
 <!--contact.php-->
-<img class="img-fluid" src="/assets/images/banner6.jpg" alt="balajiexim" title="balajiexim" style="margin-top: -20px;">
+<img class="img-fluid" src="/assets/images/cntct1.jpg" alt="balajiexim" title="balajiexim" style="margin-top: -20px;">
 <div class="text-justify p-3 bckclr2 t1">
-    <a class="clr" [routerLink]="['/home']"><i class="fa fa-angle-double-left"></i> Home / </a>
-    <a class="clr" [routerLink]="['/contact']"> Contact Us <i class="fa fa-angle-double-right"></i></a>
+  <a class="clr" [routerLink]="['/home']"><i class="fa fa-angle-double-left"></i> Home / </a>
+  <a class="clr" [routerLink]="['/contact']"> Contact Us <i class="fa fa-angle-double-right"></i></a>
 </div>
-<div class="container-fluid mt-5">
+<div class="container mt-5 mb-5" style="border-radius: 5px;background-color: #f2f2f2;padding: 25px;">
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+  <!--Section description-->
+  <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us
+    directly.</p>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="profilecard">
+        <!-- <img src="/assets/images/balajieximlogo.jpg" alt="John" style="width:100%"> -->
+        <div class="avatar"><img src="/assets/images/balajieximlogo.jpg" class="mt-5" alt="profile" style="width:100%"></div>
+        <h1>Narasingam</h1>
+        <p class="title">Proprietor, BalajiExim</p>
+        <!-- <p>Harvard University</p> -->
+        <p><i class="fa fa-map-marker"></i>No.3/303, Karupasamy Kovil Street,vilampatti, Sivakasi, TamilNadu</p>
+        <font size="4"><p>India</p></font>
+        <p><i class="fa fa-phone"></i>+919150182830</p>
+        <p style="padding-bottom: 3rem"><i class="fa fa-envelope"></i>balajiexim.tn@gmail.com</p>
+        <!-- <div style="margin: 24px 0;">
+          <a href="#"><i class="fa fa-dribbble"></i></a> 
+          <a href="#"><i class="fa fa-twitter"></i></a>  
+          <a href="#"><i class="fa fa-linkedin"></i></a>  
+          <a href="#"><i class="fa fa-facebook"></i></a> 
+        </div> -->
+      </div>
+      <!-- <h4 class="text-justify fntbold mt-5">Our Details</h4> -->
+      <!-- <ul class="list-unstyled">
+        <li>
+          <p><a class="btn-floating bg-secondary"
+              style="margin:0px; line-height: 47px;font-size:2.5rem;padding-left: 2px;"><i
+                class="fa fa-map-marker"></i></a>
+            San Francisco, CA 94126, USA</p>
+        </li>
+
+        <li>
+          <p><a class="btn-floating bg-secondary"
+              style="margin:0px; line-height: 47px;font-size:2.5rem;padding-left: 2px;"><i class="fa fa-phone"></i></a>
+            + 01 234 567 89</p>
+        </li>
+
+        <li>
+          <p><a class="btn-floating bg-secondary"
+              style="margin:0px; line-height: 47px;font-size:2.5rem;padding-left: 2px;"><i
+                class="fa fa-envelope"></i></a>
+            contact@mdbootstrap.com</p>
+        </li>
+      </ul> -->
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <form (ngSubmit)="processForm()" #contactForm="ngForm">
+        <label> User Name : </label>
+        <input type="text" id="name" name="name" placeholder="your name.." required minlength="3" #nameInput="ngModel"
+          [(ngModel)]="name">
+
+        <div class="error" *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">
+          Name is required and needs to be at least 3 characters long.
+        </div>
+
+        <label> Email Address : </label>
+        <input type="text" id="email" name="email" placeholder="your email.." required email #emailInput="ngModel"
+          [(ngModel)]="email">
+
+        <div class="error" *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+          Please enter valid email.
+        </div>
+
+        <label> Mobile Number : </label>
+        <input type="text" id="mobile" name="mobile" placeholder="your mobile.." required #mobileInput="ngModel"
+          [(ngModel)]="mobile">
+
+        <div class="error" *ngIf="mobileInput.invalid && (mobileInput.dirty || mobileInput.touched)">
+          Please enter valid mobile number.
+        </div>
+
+        <label> Address : </label>
+        <textarea class="wdth1" id="address" name="address" placeholder="your address.." required maxlength="100"
+          #addressInput="ngModel" [(ngModel)]="address"></textarea>
+
+        <div class="error" *ngIf="addressInput.invalid && (addressInput.dirty || addressInput.touched)">
+          Please enter address and it should not exceed 100 chars.
+        </div>
+
+        <label> Details : </label>
+        <textarea class="wdth1" id="details" name="details" placeholder="your queries.." required maxlength="100"
+          #detailsInput="ngModel" [(ngModel)]="details"></textarea>
+
+        <div class="error" *ngIf="detailsInput.invalid && (detailsInput.dirty || detailsInput.touched)">
+          Please enter details and it should not exceed 100 chars.
+        </div>
+
+        <p class="text-center mt-5">
+          <button [disabled]="!contactForm.form.valid" class="btn btn-success" name="send" type="submit"
+            value="submit">Send</button>
+        </p>
+      </form>
+    </div>  
+</div>
+<!-- <div class="container-fluid mt-5">
   <div class="row p-3">
     <div class="col-sm-12 col-md-12 col-lg-6">
       <img src="assets/images/balajieximlogo.jpg" class="wdth4 mt-2" alt="balajiexim" title="balajiexim">
@@ -78,7 +174,7 @@
     </div>
     <div class="col-sm-12 col-md-12 col-lg-6 mar bckimg2 img-thumbnail">
       <form (ngSubmit)="processForm()" #contactForm="ngForm">
-        <h3 class="text-center mt-3 fntbold clr1"> LETS KEEP IN TOUCH </h3>
+        <h3 class="text-center mt-3 fntbold clr1"> WRITE TO US </h3>
         
         <label> User Name : </label>
         <input type="text" class="form-control" id="name" name="name" required minlength="3" #nameInput="ngModel" [(ngModel)]="name">
@@ -126,4 +222,4 @@
       </agm-map>
     </div>
   </div>
-</div>
+</div> -->
